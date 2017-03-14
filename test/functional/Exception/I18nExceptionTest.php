@@ -1,0 +1,83 @@
+<?php
+
+namespace Dhii\I18n\FuncTest\Exception;
+
+use Xpmock\TestCase;
+
+/**
+ * Tests {@see Dhii\I18n\Exception\I18nException}.
+ *
+ * @since [*next-version*]
+ */
+class I18nExceptionTest extends TestCase
+{
+    /**
+     * The name of the test subject.
+     *
+     * @since [*next-version*]
+     */
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\I18n\\Exception\I18nException';
+
+    /**
+     * Creates a new instance of the test subject.
+     *
+     * @since [*next-version*]
+     *
+     * @return Dhii\I18n\Exception\I18nException
+     */
+    public function createInstance($message = '', $code = 0, $previous = null)
+    {
+        $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
+            ->new($message, $code, $previous);
+
+        return $mock;
+    }
+
+    /**
+     * Creates a new generic exception.
+     *
+     * @since [*next-version*]
+     *
+     * @param string $message The message for the exception.
+     *
+     * @return \Exception The new exception.
+     */
+    protected function _createException($message = '')
+    {
+        $mock = $this->mock('Exception')
+            ->new($message);
+
+        return $mock;
+    }
+
+    /**
+     * Tests whether a valid instance of the test subject can be created.
+     *
+     * @since [*next-version*]
+     */
+    public function testCanBeCreated()
+    {
+        $subject = $this->createInstance();
+
+        $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject, 'A valid instance of the test subject could not be created');
+    }
+
+    /**
+     * Tests that the constructor works correctly.
+     *
+     * @since [*next-version*]
+     */
+    public function testConstruct()
+    {
+        $message = uniqid('message-');
+        $code = rand(1, 99);
+        $previous = $this->_createException();
+        $subject = $this->createInstance($message, $code, $previous);
+
+        /* @var $result \Exception */
+        $this->assertInstanceOf('Dhii\\I18n\\Exception\\I18nExceptionInterface', $subject, 'Returned exception is not of the correct type');
+        $this->assertEquals($message, $subject->getMessage(), 'Returned exception does not have the correct message');
+        $this->assertEquals($code, $subject->getCode(), 'Returned exception does not have the correct code');
+        $this->assertSame($previous, $subject->getPrevious(), 'Returned exception does not have the correct inner exception');
+    }
+}
