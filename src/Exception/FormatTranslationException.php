@@ -7,7 +7,7 @@ use Dhii\I18n\TranslatorInterface;
 /**
  * Represents an exception related to string translation.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class FormatTranslationException extends AbstractFormatTranslationException implements FormatTranslationExceptionInterface
 {
@@ -15,7 +15,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
      * {@inheritdoc}
      *
      * @see \Exception::__construct()
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __construct(
             $message = '',
@@ -39,7 +39,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getSubject()
     {
@@ -49,7 +49,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getTranslator()
     {
@@ -59,7 +59,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getContext()
     {
@@ -69,7 +69,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getParams()
     {

@@ -7,21 +7,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see Dhii\I18n\AbstractBaseFormatTranslator}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractBaseFormatTranslatorTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\I18n\\AbstractBaseFormatTranslator';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return \Dhii\I18n\AbstractBaseFormatTranslator
      */
@@ -37,7 +37,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Creates a new generic exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $message The message for the exception.
      *
@@ -54,7 +54,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Creates a new instance of a translator.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TranslatorInterface The new instance.
      */
@@ -68,7 +68,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -80,7 +80,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests whether parameters are interpolated correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testInterpolateParams()
     {
@@ -97,7 +97,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests that an internationalization exception can be created correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCreateI18nException()
     {
@@ -118,7 +118,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests that a translation exception can be created correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCreateTranslationException()
     {
@@ -143,7 +143,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests that a string translation exception can be created correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCreateStringTranslationException()
     {
@@ -170,7 +170,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     /**
      * Tests that a format translation exception can be created correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCreateFormatTranslationException()
     {

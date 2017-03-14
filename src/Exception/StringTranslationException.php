@@ -7,7 +7,7 @@ use Dhii\I18n\TranslatorInterface;
 /**
  * Represents an exception related to string translation.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class StringTranslationException extends AbstractStringTranslationException implements StringTranslationExceptionInterface
 {
@@ -15,7 +15,7 @@ class StringTranslationException extends AbstractStringTranslationException impl
      * {@inheritdoc}
      *
      * @see \Exception::__construct()
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __construct(
             $message = '',
@@ -37,7 +37,7 @@ class StringTranslationException extends AbstractStringTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getSubject()
     {
@@ -47,7 +47,7 @@ class StringTranslationException extends AbstractStringTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getTranslator()
     {
@@ -57,7 +57,7 @@ class StringTranslationException extends AbstractStringTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function getContext()
     {

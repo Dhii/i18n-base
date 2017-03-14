@@ -5,7 +5,7 @@ namespace Dhii\I18n\Exception;
 /**
  * Represents an exception related to internationalization.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class I18nException extends AbstractI18nException implements I18nExceptionInterface
 {
@@ -13,7 +13,7 @@ class I18nException extends AbstractI18nException implements I18nExceptionInterf
      * {@inheritdoc}
      *
      * @see \Exception::__construct()
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function __construct($message = '', $code = 0, \Exception $previous = null)
     {

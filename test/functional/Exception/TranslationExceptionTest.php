@@ -7,21 +7,21 @@ use Xpmock\TestCase;
 /**
      * Tests {@see Dhii\I18n\Exception\TranslationException}.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     class TranslationExceptionTest extends TestCase
     {
         /**
      * The name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\I18n\\Exception\TranslationException';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return Dhii\I18n\Exception\TranslationException
      */
@@ -36,7 +36,7 @@ use Xpmock\TestCase;
     /**
      * Creates a new generic exception.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $message The message for the exception.
      *
@@ -53,7 +53,7 @@ use Xpmock\TestCase;
     /**
      * Creates a new instance of a translator.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return TranslatorInterface The new instance.
      */
@@ -67,7 +67,7 @@ use Xpmock\TestCase;
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -79,7 +79,7 @@ use Xpmock\TestCase;
     /**
      * Tests that the constructor works correctly.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testConstruct()
     {

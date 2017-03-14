@@ -10,7 +10,7 @@ use Dhii\I18n\Exception\FormatTranslationException;
 /**
  * Common base functionality for format translators.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
 {
@@ -19,7 +19,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * This method uses the {@see sprintf()} type format.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _interpolateParams($format, $params)
     {
@@ -31,7 +31,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _createI18nException($message, $code = 0, \Exception $previous = null)
     {
@@ -41,7 +41,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _createTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null)
     {
@@ -51,7 +51,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _createStringTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null)
     {
@@ -61,7 +61,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _createFormatTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null, $params = null)
     {
