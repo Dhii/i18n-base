@@ -27,5 +27,9 @@
         "psr-4": {
             "Dhii\\I18n\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix -vvv"
     }
 }
