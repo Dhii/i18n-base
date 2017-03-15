@@ -5,3 +5,8 @@
 [![Latest Stable Version](https://poser.pugx.org/dhii/i18n-base/version)](https://packagist.org/packages/dhii/i18n-base)
 
 Base implementations for internationalization.
+
+This package complies with [Dhii] standards.
+
+
+[Dhii]:                     https://github.com/Dhii/dhii

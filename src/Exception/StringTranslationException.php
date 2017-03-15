@@ -3,6 +3,8 @@
 namespace Dhii\I18n\Exception;
 
 use Dhii\I18n\TranslatorInterface;
+use Dhii\Data\ValueAwareInterface as Value;
+use Dhii\Util\String\StringableInterface as Stringable;
 
 /**
  * Represents an exception related to string translation.
@@ -16,18 +18,22 @@ class StringTranslationException extends AbstractStringTranslationException impl
      *
      * @see \Exception::__construct()
      * @since 0.1
+     *
+     * @param string|Stringable|null   $string     The string being translated, if any.
+     * @param TranslatorInterface|null $translator The translator performing the translation, if any.
+     * @param mixed|Value              $context    The context of translation, if any.
      */
     public function __construct(
-            $message = '',
-            $code = 0,
-            \Exception $previous = null,
-            $subject = null,
-            TranslatorInterface $translator = null,
-            $context = null)
-    {
+        $message = '',
+        $code = 0,
+        \Exception $previous = null,
+        $string = null,
+        TranslatorInterface $translator = null,
+        $context = null
+    ) {
         parent::__construct($message, $code, $previous);
 
-        $this->_setSubject($subject);
+        $this->_setSubject($string);
         $this->_setTranslator($translator);
         $this->_setContext($context);
 

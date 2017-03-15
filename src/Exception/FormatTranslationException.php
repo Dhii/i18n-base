@@ -3,6 +3,8 @@
 namespace Dhii\I18n\Exception;
 
 use Dhii\I18n\TranslatorInterface;
+use Dhii\Util\String\StringableInterface as Stringable;
+use Dhii\Data\ValueAwareInterface as Value;
 
 /**
  * Represents an exception related to string translation.
@@ -16,19 +18,24 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
      *
      * @see \Exception::__construct()
      * @since 0.1
+     *
+     * @param string|Stringable|null   $format     The format string being translated, if any.
+     * @param TranslatorInterface|null $translator The translator performing the translation, if any.
+     * @param mixed|Value              $context    The context of translation, if any.
+     * @param array|null               $params     The interpolation parameters used, if any.
      */
     public function __construct(
-            $message = '',
-            $code = 0,
-            \Exception $previous = null,
-            $subject = null,
-            TranslatorInterface $translator = null,
-            $context = null,
-            $params = null)
-    {
+        $message = '',
+        $code = 0,
+        \Exception $previous = null,
+        $format = null,
+        TranslatorInterface $translator = null,
+        $context = null,
+        $params = null
+    ) {
         parent::__construct($message, $code, $previous);
 
-        $this->_setSubject($subject);
+        $this->_setSubject($format);
         $this->_setTranslator($translator);
         $this->_setContext($context);
         $this->_setInterpolationParams($params);
