@@ -26,8 +26,8 @@ class TranslationException extends AbstractTranslationException implements Trans
         $code = 0,
         \Exception $previous = null,
         $subject = null,
-        TranslatorInterface $translator = null)
-    {
+        TranslatorInterface $translator = null
+    ) {
         parent::__construct($message, $code, $previous);
 
         $this->_setSubject($subject);

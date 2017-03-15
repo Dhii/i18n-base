@@ -25,14 +25,14 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
      * @param array|null               $params     The interpolation parameters used, if any.
      */
     public function __construct(
-            $message = '',
-            $code = 0,
-            \Exception $previous = null,
-            $format = null,
-            TranslatorInterface $translator = null,
-            $context = null,
-            $params = null)
-    {
+        $message = '',
+        $code = 0,
+        \Exception $previous = null,
+        $format = null,
+        TranslatorInterface $translator = null,
+        $context = null,
+        $params = null
+    ) {
         parent::__construct($message, $code, $previous);
 
         $this->_setSubject($format);

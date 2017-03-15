@@ -24,13 +24,13 @@ class StringTranslationException extends AbstractStringTranslationException impl
      * @param mixed|Value              $context    The context of translation, if any.
      */
     public function __construct(
-            $message = '',
-            $code = 0,
-            \Exception $previous = null,
-            $string = null,
-            TranslatorInterface $translator = null,
-            $context = null)
-    {
+        $message = '',
+        $code = 0,
+        \Exception $previous = null,
+        $string = null,
+        TranslatorInterface $translator = null,
+        $context = null
+    ) {
         parent::__construct($message, $code, $previous);
 
         $this->_setSubject($string);
