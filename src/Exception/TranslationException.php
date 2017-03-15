@@ -16,6 +16,9 @@ class TranslationException extends AbstractTranslationException implements Trans
      *
      * @see \Exception::__construct()
      * @since 0.1
+     *
+     * @param string|Stringable|null   $subject    The subject being translated, if any.
+     * @param TranslatorInterface|null $translator The translator performing the translation, if any.
      */
     public function __construct(
         $message = '',
