@@ -4,6 +4,7 @@ namespace Dhii\I18n\Exception;
 
 use Dhii\I18n\TranslatorInterface;
 use Dhii\Data\ValueAwareInterface as Value;
+use Dhii\Util\String\StringableInterface as Stringable;
 
 /**
  * Represents an exception related to string translation.
