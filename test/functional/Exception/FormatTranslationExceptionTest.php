@@ -5,13 +5,13 @@ namespace Dhii\I18n\FuncTest\Exception;
 use Xpmock\TestCase;
 
 /**
-     * Tests {@see Dhii\I18n\Exception\FormatTranslationException}.
-     *
-     * @since 0.1
-     */
-    class FormatTranslationExceptionTest extends TestCase
-    {
-        /**
+ * Tests {@see Dhii\I18n\Exception\FormatTranslationException}.
+ *
+ * @since 0.1
+ */
+class FormatTranslationExceptionTest extends TestCase
+{
+    /**
      * The name of the test subject.
      *
      * @since 0.1
@@ -102,4 +102,4 @@ use Xpmock\TestCase;
         $this->assertEquals($context, $subject->getContext(), 'Returned exception does not have the correct context');
         $this->assertEquals($params, $subject->getParams(), 'Returned exception does not have the correct params');
     }
-    }
+}

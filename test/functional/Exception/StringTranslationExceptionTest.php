@@ -5,13 +5,13 @@ namespace Dhii\I18n\FuncTest\Exception;
 use Xpmock\TestCase;
 
 /**
-     * Tests {@see Dhii\I18n\Exception\StringTranslationException}.
-     *
-     * @since 0.1
-     */
-    class StringTranslationExceptionTest extends TestCase
-    {
-        /**
+ * Tests {@see Dhii\I18n\Exception\StringTranslationException}.
+ *
+ * @since 0.1
+ */
+class StringTranslationExceptionTest extends TestCase
+{
+    /**
      * The name of the test subject.
      *
      * @since 0.1
@@ -100,4 +100,4 @@ use Xpmock\TestCase;
         $this->assertSame($translator, $subject->getTranslator(), 'Returned exception does not have the correct translator');
         $this->assertEquals($context, $subject->getContext(), 'Returned exception does not have the correct context');
     }
-    }
+}
