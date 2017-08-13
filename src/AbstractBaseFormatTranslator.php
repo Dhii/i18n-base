@@ -12,7 +12,7 @@ use Dhii\I18n\Exception\FormatTranslationException;
  *
  * @since 0.1
  */
-abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
+abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator implements FormatTranslatorInterface
 {
     /**
      * {@inheritdoc}
@@ -43,9 +43,9 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null)
+    protected function _createTranslationException($message, $code = 0, \Exception $previous = null, $subject = null)
     {
-        return new TranslationException($message, $code, $previous, $subject, $translator);
+        return new TranslationException($message, $code, $previous, $subject, $this);
     }
 
     /**
@@ -53,9 +53,9 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createStringTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null)
+    protected function _createStringTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, $context = null)
     {
-        return new StringTranslationException($message, $code, $previous, $subject, $translator, $context);
+        return new StringTranslationException($message, $code, $previous, $subject, $this, $context);
     }
 
     /**
@@ -63,8 +63,8 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createFormatTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null, $params = null)
+    protected function _createFormatTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, $context = null, $params = null)
     {
-        return new FormatTranslationException($message, $code, $previous, $subject, $translator, $context, $params);
+        return new FormatTranslationException($message, $code, $previous, $subject, $this, $context, $params);
     }
 }

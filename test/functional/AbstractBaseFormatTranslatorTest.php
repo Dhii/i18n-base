@@ -29,6 +29,7 @@ class AbstractBaseFormatTranslatorTest extends TestCase
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->_translateString()
+            ->translate()
             ->new();
 
         return $mock;
@@ -126,18 +127,17 @@ class AbstractBaseFormatTranslatorTest extends TestCase
         $code = rand(1, 99);
         $previous = $this->_createException();
         $value = uniqid('subject-');
-        $translator = $this->_createTranslator();
         $subject = $this->createInstance();
         $reflection = $this->reflect($subject);
 
-        $result = $reflection->_createTranslationException($message, $code, $previous, $value, $translator);
+        $result = $reflection->_createTranslationException($message, $code, $previous, $value);
         /* @var $result \Exception */
         $this->assertInstanceOf('Dhii\\I18n\\Exception\\TranslationExceptionInterface', $result, 'Returned exception is not of the correct type');
         $this->assertEquals($message, $result->getMessage(), 'Returned exception does not have the correct message');
         $this->assertEquals($code, $result->getCode(), 'Returned exception does not have the correct code');
         $this->assertSame($previous, $result->getPrevious(), 'Returned exception does not have the correct inner exception');
         $this->assertEquals($value, $result->getSubject(), 'Returned exception does not have the correct subject');
-        $this->assertSame($translator, $result->getTranslator(), 'Returned exception does not have the correct translator');
+        $this->assertSame($subject, $result->getTranslator(), 'Returned exception does not have the correct translator');
     }
 
     /**
@@ -151,19 +151,18 @@ class AbstractBaseFormatTranslatorTest extends TestCase
         $code = rand(1, 99);
         $previous = $this->_createException();
         $value = uniqid('subject-');
-        $translator = $this->_createTranslator();
         $subject = $this->createInstance();
         $context = uniqid('context-');
         $reflection = $this->reflect($subject);
 
-        $result = $reflection->_createStringTranslationException($message, $code, $previous, $value, $translator, $context);
+        $result = $reflection->_createStringTranslationException($message, $code, $previous, $value, $context);
         /* @var $result \Exception */
         $this->assertInstanceOf('Dhii\\I18n\\Exception\\StringTranslationExceptionInterface', $result, 'Returned exception is not of the correct type');
         $this->assertEquals($message, $result->getMessage(), 'Returned exception does not have the correct message');
         $this->assertEquals($code, $result->getCode(), 'Returned exception does not have the correct code');
         $this->assertSame($previous, $result->getPrevious(), 'Returned exception does not have the correct inner exception');
         $this->assertEquals($value, $result->getSubject(), 'Returned exception does not have the correct subject');
-        $this->assertSame($translator, $result->getTranslator(), 'Returned exception does not have the correct translator');
+        $this->assertSame($subject, $result->getTranslator(), 'Returned exception does not have the correct translator');
         $this->assertEquals($context, $result->getContext(), 'Returned exception does not have the correct context');
     }
 
@@ -178,20 +177,19 @@ class AbstractBaseFormatTranslatorTest extends TestCase
         $code = rand(1, 99);
         $previous = $this->_createException();
         $value = uniqid('subject-');
-        $translator = $this->_createTranslator();
         $subject = $this->createInstance();
         $context = uniqid('context-');
         $params = array('apple', 'banana');
         $reflection = $this->reflect($subject);
 
-        $result = $reflection->_createFormatTranslationException($message, $code, $previous, $value, $translator, $context, $params);
+        $result = $reflection->_createFormatTranslationException($message, $code, $previous, $value, $context, $params);
         /* @var $result \Exception */
         $this->assertInstanceOf('Dhii\\I18n\\Exception\\FormatTranslationExceptionInterface', $result, 'Returned exception is not of the correct type');
         $this->assertEquals($message, $result->getMessage(), 'Returned exception does not have the correct message');
         $this->assertEquals($code, $result->getCode(), 'Returned exception does not have the correct code');
         $this->assertSame($previous, $result->getPrevious(), 'Returned exception does not have the correct inner exception');
         $this->assertEquals($value, $result->getSubject(), 'Returned exception does not have the correct subject');
-        $this->assertSame($translator, $result->getTranslator(), 'Returned exception does not have the correct translator');
+        $this->assertSame($subject, $result->getTranslator(), 'Returned exception does not have the correct translator');
         $this->assertEquals($context, $result->getContext(), 'Returned exception does not have the correct context');
         $this->assertEquals($params, $result->getParams(), 'Returned exception does not have the correct params');
     }
