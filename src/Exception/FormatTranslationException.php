@@ -5,6 +5,7 @@ namespace Dhii\I18n\Exception;
 use Dhii\I18n\TranslatorInterface;
 use Dhii\Util\String\StringableInterface as Stringable;
 use Dhii\Data\ValueAwareInterface as Value;
+use Exception as RootException;
 
 /**
  * Represents an exception related to string translation.
@@ -16,7 +17,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     /**
      * {@inheritdoc}
      *
-     * @see \Exception::__construct()
+     * @see RootException::__construct()
      * @since 0.1
      *
      * @param string|Stringable|null   $format     The format string being translated, if any.
@@ -27,7 +28,7 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
     public function __construct(
         $message = '',
         $code = 0,
-        \Exception $previous = null,
+        RootException $previous = null,
         $format = null,
         TranslatorInterface $translator = null,
         $context = null,

@@ -1,6 +1,7 @@
 <?php
 
 namespace Dhii\I18n\Exception;
+use Exception as RootException;
 
 /**
  * Represents an exception related to internationalization.
@@ -12,10 +13,10 @@ class I18nException extends AbstractI18nException implements I18nExceptionInterf
     /**
      * {@inheritdoc}
      *
-     * @see \Exception::__construct()
+     * @see RootException::__construct()
      * @since 0.1
      */
-    public function __construct($message = '', $code = 0, \Exception $previous = null)
+    public function __construct($message = '', $code = 0, RootException $previous = null)
     {
         parent::__construct($message, $code, $previous);
         $this->_construct();
