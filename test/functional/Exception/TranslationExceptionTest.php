@@ -37,7 +37,7 @@ class TranslationExceptionTest extends TestCase
     /**
      * Creates a new stringable.
      *
-     * @since [*next-version*]
+     * @since 0.2
      *
      * @param string $string The string for the stringable to represent.
      * @return Stringable The new instance.
@@ -122,7 +122,7 @@ class TranslationExceptionTest extends TestCase
     /**
      * Tests that the constructor works correctly when a stringable is passed.
      *
-     * @since [*next-version*]
+     * @since 0.2
      */
     public function testConstructStringable()
     {
