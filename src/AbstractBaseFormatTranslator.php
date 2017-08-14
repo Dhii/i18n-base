@@ -70,41 +70,4 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
     {
         return new FormatTranslationException($message, $code, $previous, $subject, $translator, $context, $params);
     }
-
-    /**
-     * Converts a value to a simple version.
-     *
-     * @since [*next-version*]
-     *
-     * @param mixed|Value $value The value to resolve.
-     *
-     * @return mixed The simpler value.
-     */
-    protected function _resolveValue($value)
-    {
-        if ($value instanceof Value) {
-            $value = $value->getValue();
-        }
-
-        return $value;
-    }
-
-    /**
-     * Converts a string representation into its primitive value.
-     *
-     * @since [*next-version*]
-     *
-     * @param mixed|Stringable|Value $string The string representation.
-     *
-     * @return string The string value.
-     */
-    protected function _resolveString($string)
-    {
-        if ($string instanceof Stringable) {
-            return (string) $string;
-        }
-        $string = $this->_resolveValue($string);
-
-        return (string) $string;
-    }
 }
