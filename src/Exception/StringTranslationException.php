@@ -32,6 +32,8 @@ class StringTranslationException extends AbstractStringTranslationException impl
         TranslatorInterface $translator = null,
         $context = null
     ) {
+        $message = (string) $message;
+
         parent::__construct($message, $code, $previous);
 
         $this->_setSubject($string);

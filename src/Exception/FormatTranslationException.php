@@ -34,6 +34,8 @@ class FormatTranslationException extends AbstractFormatTranslationException impl
         $context = null,
         $params = null
     ) {
+        $message = (string) $message;
+
         parent::__construct($message, $code, $previous);
 
         $this->_setSubject($format);
