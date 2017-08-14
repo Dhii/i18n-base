@@ -3,9 +3,10 @@
 namespace Dhii\I18n\FuncTest\Exception;
 
 use Xpmock\TestCase;
+use Dhii\Util\String\StringableInterfacen as Stringable;
 
 /**
- * Tests {@see Dhii\I18n\Exception\TranslationException}.
+ * Tests {@see \Dhii\I18n\Exception\TranslationException}.
  *
  * @since 0.1
  */
@@ -23,12 +24,31 @@ class TranslationExceptionTest extends TestCase
      *
      * @since 0.1
      *
-     * @return Dhii\I18n\Exception\TranslationException
+     * @return \Dhii\I18n\Exception\TranslationException
      */
     public function createInstance($message = '', $code = 0, $previous = null, $value = null, $translator = null)
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->new($message, $code, $previous, $value, $translator);
+
+        return $mock;
+    }
+
+    /**
+     * Creates a new stringable.
+     *
+     * @since [*next-version*]
+     *
+     * @param string $string The string for the stringable to represent.
+     * @return Stringable The new instance.
+     */
+    protected function _createStringable($string = '')
+    {
+        $mock = $this->mock('Dhii\Util\String\StringableInterface')
+                ->__toString(function() use ($string) {
+                    return $string;
+                })
+                ->new();
 
         return $mock;
     }
@@ -89,6 +109,30 @@ class TranslationExceptionTest extends TestCase
         $value = uniqid('subject-');
         $translator = $this->_createTranslator();
         $subject = $this->createInstance($message, $code, $previous, $value, $translator);
+
+        /* @var $result \Exception */
+        $this->assertInstanceOf('Dhii\\I18n\\Exception\\TranslationExceptionInterface', $subject, 'Returned exception is not of the correct type');
+        $this->assertEquals($message, $subject->getMessage(), 'Returned exception does not have the correct message');
+        $this->assertEquals($code, $subject->getCode(), 'Returned exception does not have the correct code');
+        $this->assertSame($previous, $subject->getPrevious(), 'Returned exception does not have the correct inner exception');
+        $this->assertEquals($value, $subject->getSubject(), 'Returned exception does not have the correct subject');
+        $this->assertSame($translator, $subject->getTranslator(), 'Returned exception does not have the correct translator');
+    }
+
+    /**
+     * Tests that the constructor works correctly when a stringable is passed.
+     *
+     * @since [*next-version*]
+     */
+    public function testConstructStringable()
+    {
+        $message = uniqid('message-');
+        $_message = $this->_createStringable($message);
+        $code = rand(1, 99);
+        $previous = $this->_createException();
+        $value = uniqid('subject-');
+        $translator = $this->_createTranslator();
+        $subject = $this->createInstance($_message, $code, $previous, $value, $translator);
 
         /* @var $result \Exception */
         $this->assertInstanceOf('Dhii\\I18n\\Exception\\TranslationExceptionInterface', $subject, 'Returned exception is not of the correct type');
