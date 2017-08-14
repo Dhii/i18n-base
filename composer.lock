@@ -4,21 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "76f07f721cb35ea75fc21ed3db2e4e46",
-    "content-hash": "a7c02c185c583e163a63c1e416e4713a",
+    "content-hash": "4a1e4784bd86314269f64d34cdc73b18",
     "packages": [
         {
             "name": "dhii/i18n-abstract",
-            "version": "v0.1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/i18n-abstract.git",
-                "reference": "90d36bc19f76ff9c618b9ae7631deaa05e7352bc"
+                "reference": "0d11f7ee6a8fd56e01c92fea19d1c6f760843950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/i18n-abstract/zipball/90d36bc19f76ff9c618b9ae7631deaa05e7352bc",
-                "reference": "90d36bc19f76ff9c618b9ae7631deaa05e7352bc",
+                "url": "https://api.github.com/repos/Dhii/i18n-abstract/zipball/0d11f7ee6a8fd56e01c92fea19d1c6f760843950",
+                "reference": "0d11f7ee6a8fd56e01c92fea19d1c6f760843950",
                 "shasum": ""
             },
             "require": {
@@ -32,6 +31,9 @@
                 "dhii/stringable-interface": "^0.1",
                 "phpunit/phpunit": "^4.8",
                 "ptrofimov/xpmock": "^1.1"
+            },
+            "suggest": {
+                "dhii/stringable-interface": "^0.1"
             },
             "type": "library",
             "autoload": {
@@ -50,7 +52,7 @@
                 }
             ],
             "description": "Common abstract functionality for internationalization.",
-            "time": "2017-03-15 17:20:07"
+            "time": "2017-08-13 12:32:56"
         },
         {
             "name": "dhii/i18n-interface",
@@ -94,7 +96,7 @@
                 }
             ],
             "description": "Interfaces for internationalization.",
-            "time": "2017-03-15 16:01:39"
+            "time": "2017-03-15T16:01:39+00:00"
         }
     ],
     "packages-dev": [
@@ -154,7 +156,7 @@
                 "codeclimate",
                 "coverage"
             ],
-            "time": "2016-04-19 16:54:33"
+            "time": "2016-04-19T16:54:33+00:00"
         },
         {
             "name": "dhii/data-key-value-aware-interface",
@@ -196,7 +198,7 @@
                 }
             ],
             "description": "Interfaces that aim to increase interoperability of value objects",
-            "time": "2017-01-21 17:35:30"
+            "time": "2017-01-21T17:35:30+00:00"
         },
         {
             "name": "dhii/php-cs-fixer-config",
@@ -278,7 +280,7 @@
                 }
             ],
             "description": "Interoperability interface for objects that can be cast to string",
-            "time": "2017-01-23 15:08:20"
+            "time": "2017-01-23T15:08:20+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -390,7 +392,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2016-08-16 23:31:05"
+            "time": "2016-08-16T23:31:05+00:00"
         },
         {
             "name": "guzzle/guzzle",
@@ -535,7 +537,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-03 12:10:50"
+            "time": "2015-02-03T12:10:50+00:00"
         },
         {
             "name": "phpspec/prophecy",
@@ -748,7 +750,7 @@
             "keywords": [
                 "template"
             ],
-            "time": "2015-06-21 13:50:34"
+            "time": "2015-06-21T13:50:34+00:00"
         },
         {
             "name": "phpunit/php-timer",
@@ -1054,7 +1056,7 @@
                 "MIT"
             ],
             "description": "PHPUnit: simple syntax to create mock-objects",
-            "time": "2014-01-02 16:42:27"
+            "time": "2014-01-02T16:42:27+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
@@ -1484,7 +1486,7 @@
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
-            "time": "2015-06-21 13:59:46"
+            "time": "2015-06-21T13:59:46+00:00"
         },
         {
             "name": "symfony/config",
@@ -2028,6 +2030,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "dhii/i18n-abstract": 20,
         "dhii/php-cs-fixer-config": 20
     },
     "prefer-stable": false,
