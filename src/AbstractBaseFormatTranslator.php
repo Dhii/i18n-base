@@ -2,17 +2,20 @@
 
 namespace Dhii\I18n;
 
+use Dhii\Data\ValueAwareInterface as Value;
+use Dhii\Util\String\StringableInterface as Stringable;
 use Dhii\I18n\Exception\I18nException;
 use Dhii\I18n\Exception\TranslationException;
 use Dhii\I18n\Exception\StringTranslationException;
 use Dhii\I18n\Exception\FormatTranslationException;
+use Exception as RootException;
 
 /**
  * Common base functionality for format translators.
  *
  * @since 0.1
  */
-abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
+abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator implements FormatTranslatorInterface
 {
     /**
      * {@inheritdoc}
@@ -33,7 +36,7 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createI18nException($message, $code = 0, \Exception $previous = null)
+    protected function _createI18nException($message, $code = 0, RootException $previous = null)
     {
         return new I18nException($message, $code, $previous);
     }
@@ -43,9 +46,9 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null)
+    protected function _createTranslationException($message, $code = 0, RootException $previous = null, $subject = null)
     {
-        return new TranslationException($message, $code, $previous, $subject, $translator);
+        return new TranslationException($message, $code, $previous, $subject, $this);
     }
 
     /**
@@ -53,9 +56,9 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createStringTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null)
+    protected function _createStringTranslationException($message, $code = 0, RootException $previous = null, $subject = null, $context = null)
     {
-        return new StringTranslationException($message, $code, $previous, $subject, $translator, $context);
+        return new StringTranslationException($message, $code, $previous, $subject, $this, $context);
     }
 
     /**
@@ -63,8 +66,8 @@ abstract class AbstractBaseFormatTranslator extends AbstractFormatTranslator
      *
      * @since 0.1
      */
-    protected function _createFormatTranslationException($message, $code = 0, \Exception $previous = null, $subject = null, TranslatorInterface $translator = null, $context = null, $params = null)
+    protected function _createFormatTranslationException($message, $code = 0, RootException $previous = null, $subject = null, $context = null, $params = null)
     {
-        return new FormatTranslationException($message, $code, $previous, $subject, $translator, $context, $params);
+        return new FormatTranslationException($message, $code, $previous, $subject, $this, $context, $params);
     }
 }
